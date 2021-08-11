@@ -1,1 +1,21 @@
-<p>ordenar works!</p>
+<div class="white">
+  <h1>Pipes personalizados</h1>
+
+  <p>Pipes hechos por {{ "mi" | mayusculas: may }}</p>
+
+  <button (click)="setMay()">toggle mayusculas</button>
+
+  <table>
+    <tr>
+      <td>Nombre</td>
+      <td>Vuela</td>
+      <td>Color</td>
+    </tr>
+
+    <tr *ngFor="let heroe of heroes | ordenar">
+      <td>{{ heroe.name }}</td>
+      <td>{{ heroe.fly | vuela }}</td>
+      <td>{{ heroe.color }}</td>
+    </tr>
+  </table>
+</div>

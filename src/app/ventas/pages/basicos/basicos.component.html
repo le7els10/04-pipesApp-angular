@@ -5,8 +5,43 @@
 
 <div class="p-grid white">
   <div class="p-col-4">
-    <p-card header="uppercase">Content</p-card>
+    <p-card header="uppercase">
+      {{ nameLower | uppercase }}
+    </p-card>
   </div>
-  <div class="p-col-4">2</div>
-  <div class="p-col-4">3</div>
+  <div class="p-col-4">
+    <p-card header="lowercase">
+      {{ nameUpper | lowercase }}
+    </p-card>
+  </div>
+  <div class="p-col-4">
+    <p-card header="titlecase">
+      {{ name | titlecase }}
+    </p-card>
+  </div>
+</div>
+
+<div class="white">
+  <h1>Pipes fechas</h1>
+  <p>Pipes incluídos en el common module</p>
+
+  <div class="p-grid">
+    <div class="p-col-6">
+      <p-card>
+        <ul>
+          <li>fecha - {{ fecha }}</li>
+          <li>fecha | date - {{ fecha | date }}</li>
+          <li>fecha | date:'short' - {{ fecha | date: "short" }}</li>
+          <li>fecha | date:'long' - {{ fecha | date: "long" }}</li>
+          <li>fecha | date:'custom' - {{ fecha | date: "d - MMMM - YYYY" }}</li>
+        </ul>
+        <hr />
+        <ul>
+          <li>fecha | date:'long' - {{ fecha | date: "long":"GMT-7" }}</li>
+          <li>fecha | date:'long' - {{ fecha | date: "long":"GMT-4" }}</li>
+          <li>fecha | date:'long' - {{ fecha | date: "long":"":"es-CO" }}</li>
+        </ul>
+      </p-card>
+    </div>
+  </div>
 </div>
